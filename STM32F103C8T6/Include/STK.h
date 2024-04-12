@@ -27,16 +27,23 @@ typedef struct {
 #define STK		((STK_Type*)STK_BASE_ADDRESS)
 
 /* ----------------------------------------------------------------------------
+   -- Variable for STK
+   ---------------------------------------------------------------------------- */
+extern volatile unsigned int count_Tick;
+
+/* ----------------------------------------------------------------------------
    -- Fucntion for STK
    ---------------------------------------------------------------------------- */
 /* Systick */
 unsigned int STK_CheckFlag(void);    /* Using check flag STK */
 void STK_ClearFlag(void);    /* Using clear flag STK */
-void STK_InitSystick(volatile unsigned int p_SourceClock);      /* Using init systick */
+void STK_InitSystick_ms(volatile unsigned int p_SourceClock);      /* Using init systick mili second */
+void STK_InitSystick_10us(volatile unsigned int p_SourceClock);			 /* Using init systick micro second */
 void STK_EnableSystick(void);    /* Using enable STK */
 void STK_DisableSystick(void);    /* Using disable STK */
 
-void STK_Delay_ms(volatile unsigned int p_ms);
+void STK_Delay_ms(volatile unsigned int p_ms);    /* Delay mili second */
+void STK_Delay_10us(volatile unsigned int p_us);    /* Delay micro second */
 
 #endif  /* #if !defined(SYSTICK_H_) */
 

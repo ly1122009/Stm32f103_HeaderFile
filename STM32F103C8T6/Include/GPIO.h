@@ -67,9 +67,10 @@ typedef struct {
    ---------------------------------------------------------------------------- */
 void GPIO_Output_Init(GPIO_Type*GPIOx, volatile unsigned int p_pin);    /* Init and congfig Output PIN for GPIO */
 void GPIO_Input_Init(GPIO_Type*GPIOx, volatile unsigned int p_pin);    /* Init and congfig Input PIN for GPIO */
+void GPIO_Input_Init_Floating(GPIO_Type*GPIOx, volatile unsigned int p_pin);   /* Set floating mode in input state */
 void GPIO_SetHighPIN(GPIO_Type*GPIOx, volatile unsigned int p_pin);    /* Set ON for p_pin PIN */
 void GPIO_SetLowPIN(GPIO_Type*GPIOx, volatile unsigned int p_pin);     /* Set OFF for p_pin PIN */
 void GPIO_SetTogglePIN(GPIO_Type*GPIOx, volatile unsigned int p_pin);  /* Toggle for p_pin PIN */
-
+unsigned int GPIO_ReadPIN(GPIO_Type*GPIOx, volatile unsigned int p_pin);    /* Read data of a pin */
 
 #endif
